@@ -1,0 +1,24 @@
+{
+  "parserOptions": {
+    "ecmaVersion": "2018",
+    "sourceType": "module"
+  },
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "plugins": ["react", "jest"],
+  "rules": {
+    "no-underscore-dangle": "off",
+    "import/no-unresolved": "off",
+    "jest/no-disabled-tests": "warn",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": ["js", "jsx"]
+      }
+    ],
+    "react/jsx-props-no-spreading": "off"
+  },
+  "env": {
+    "browser": true,
+    "jest": true
+  }
+}

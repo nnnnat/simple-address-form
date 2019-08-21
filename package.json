@@ -1,0 +1,81 @@
+{
+  "name": "simple-address-form",
+  "version": "1.0.0",
+  "description": "Proof of concept with Formik, Material UI and Yup",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run clean && run-p build:*",
+    "build:client": "webpack --config tooling/webpack.client.js",
+    "build:server": "webpack --config tooling/webpack.server.js",
+    "clean": "rimraf dist",
+    "dev": "run-p dev:*",
+    "dev:client": "npm run build:client -- --watch --env.development",
+    "dev:server": "npm run build:server -- --watch --env.development",
+    "dev:start": "nodemon dist/main.js --ignore src/",
+    "fmt": "prettier --write \"**/*.+(js|json|yml|gql|md)\"",
+    "int": "npm run fmt && npm run lint && npm test",
+    "lint": "eslint src/",
+    "start": "node dist/main.js",
+    "test": "run-p test:*",
+    "test:unit": "jest"
+  },
+  "keywords": [
+    "internetz"
+  ],
+  "author": "Nat Hamilton",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.3.1",
+    "@testing-library/jest-dom": "^4.0.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "eslint": "^6.2.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.15.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.18.2",
+    "react-testing-library": "^8.0.1",
+    "rimraf": "^3.0.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**",
+      "!**/*.json",
+      "!**/__snapshots__/**"
+    ],
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ]
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.3.2",
+    "envalid": "^5.0.0",
+    "express": "^4.17.1",
+    "formik": "^1.5.8",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.0.1",
+    "yup": "^0.27.0"
+  }
+}
